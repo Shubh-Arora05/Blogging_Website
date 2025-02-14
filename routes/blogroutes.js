@@ -4,7 +4,7 @@ const {generate_token, check_token} = require('../jwt') ;
 const jwt = require("jsonwebtoken");
 const routes = express.Router();
 
-const JWT_SECRET = 123 ;
+const JWT_SECRET =  "ABC"; ;
 
 
 

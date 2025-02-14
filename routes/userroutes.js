@@ -3,10 +3,10 @@ const express = require('express');
 const User= require('./../models/user') ;
 const {generate_token, check_token} = require('../jwt') ;
 const jwt = require('jsonwebtoken') ;
-;
+const JWT_SECRET = 123 ;
 
 const routes = express.Router();
-const JWT_SECRET = "ABCD" ;
+
 
 // app.use()
 

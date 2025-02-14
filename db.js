@@ -3,12 +3,11 @@
 const mongoose = require("mongoose") ;
 
 
-require('dotenv').config() ;
-const mongodb_url = process.env.MONGODB_URL ;
+const mongodb_url = `mongodb+srv://shubharora:shubharora@cluster0.3mwodev.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 const connectdb = async () =>{
     try{
    
-       await mongoose.connect(mongodb_url) ;
+       await mongoose.connect('mongodb+srv://shubharora:shubharora@cluster0.3mwodev.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0') ;
        console.log("CONNECTED TO DB")
     }
     catch(error){
@@ -16,6 +15,10 @@ const connectdb = async () =>{
         process.exit(0) ;
     }
 }
+
+
+
+
 
 
 

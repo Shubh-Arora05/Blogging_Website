@@ -7,8 +7,7 @@ const jwt = require('jsonwebtoken') ;
 
 const routes = express.Router();
 const JWT_SECRET = "ABCD" ;
-const {signinInput , signupInput} = require('@100xdevs/medium-common') ;
-const { response } = require('..');
+
 // app.use()
 
 

@@ -5,7 +5,7 @@ require('dotenv').config() ;
 const cors = require('cors') ;
 
 const port = process.env.PORT ||3000;
-
+app.use(express.json());
 
 const user_routes = require('./routes/userroutes') ;
 const blog_routes = require('./routes/blogroutes') ;
@@ -13,7 +13,7 @@ const blog_routes = require('./routes/blogroutes') ;
 
 
 app.use(cors()) ;
-app.use(express.json());
+
 app.get('/' , async(req, res)=>{
     console.log('Hello World');
     res.status(200).send("Radhe Krishna") ;
@@ -36,4 +36,3 @@ connectdb().then(() => {
 });
   
 
-module.exports = app ;

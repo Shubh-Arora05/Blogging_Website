@@ -1,32 +1,22 @@
+require('dotenv').config(); // Load .env in local development
 
+const mongoose = require("mongoose");
 
-const mongoose = require("mongoose") ;
+const connectdb = async () => {
+  try {
+    // Use env variable or fallback (optional)
+    const uri = process.env.MONGODB_URL || 'mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/your-db-name';
 
-
-const mongodb_url = `mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/`
-const connectdb = async () =>{
-    try{
-   
-       await mongoose.connect('mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/',{
-        useNewUrlParser: true,
-            useUnifiedTopology: true,
-       }) ;
-       console.log("CONNECTED TO DB")
+    if (!uri) {
+      throw new Error("❌ MONGODB_URL not found");
     }
-    catch(error){
-        console.log('error in Connected to MongoDB') ;
-        process.exit(0) ;
-    }
-}
 
+    await mongoose.connect(uri); // ✅ No deprecated options
+    console.log("✅ CONNECTED TO DB");
+  } catch (error) {
+    console.error("❌ Error connecting to MongoDB:", error.message);
+    process.exit(1); // Exit if connection fails
+  }
+};
 
-
-
-
-
-
-
-
-module.exports = connectdb ;
-
-    
+module.exports = connectdb;

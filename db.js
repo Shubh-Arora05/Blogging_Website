@@ -3,7 +3,7 @@
 const mongoose = require("mongoose") ;
 
 
-// const mongodb_url = `mongodb+srv://shubharora:shubharora@cluster0.3mwodev.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const mongodb_url = `mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/`
 const connectdb = async () =>{
     try{
    

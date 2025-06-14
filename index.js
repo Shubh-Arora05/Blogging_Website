@@ -19,20 +19,22 @@ app.get('/' , async(req, res)=>{
     res.status(200).send("Radhe Krishna") ;
 })
 
-app.use('/app/v1/user' , user_routes ) ;
-app.use('/app/v1/blog' , blog_routes) ;
-
 
 
 
 
 connectdb().then(() => {
     app.listen(port, () => {
-      //console.log(`Server is running on ${port}`);
+      console.log(`Server is running on ${port}`);
     });
   }).catch((error) => {
     //console.error("Database connection failed:", error);
     process.exit(1); // Exit process if DB connection fails
 });
   
+
+
+
+app.use('/app/v1/user' , user_routes ) ;
+app.use('/app/v1/blog' , blog_routes) ;
 

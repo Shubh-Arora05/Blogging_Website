@@ -11,7 +11,7 @@ const JWT_SECRET =  "ABC"; ;
 
 routes.get("/bulk",check_token ,async (req, res) => {
   const resposnse = await  Blog.find({}) ;
-  console.log(resposnse) ;
+  //console.log(resposnse) ;
   res.status(200).json({response : resposnse });
 })
 
@@ -19,10 +19,10 @@ routes.get("/bulk",check_token ,async (req, res) => {
 routes.get("/:id",check_token, async (req, res) => {
 
 
-  console.log("bgggg" , req.params.id);
+  //console.log("bgggg" , req.params.id);
   const id = req.params.id ;
   const response = await  Blog.findById(id) ;
-  // console.log(resposnse) ;
+  // //console.log(resposnse) ;
   
   res.status(200).json( {response , hello: "Hello World", name: req.name , id : req.params.id  });
 });
@@ -31,7 +31,7 @@ routes.get("/:id",check_token, async (req, res) => {
 ;
 
 routes.get("/", check_token, async (req, res) => { 
-  // console.log(req.name);
+  // //console.log(req.name);
   res.status(200).json({ info: "Hello World", name: req.name });
 });
 
@@ -48,7 +48,7 @@ routes.post("/",check_token, async (req, res) => {
     }
 
     const find = await Blog.find({title:body.title}) ;
-    console.log(find) ;
+    //console.log(find) ;
     if(find.length > 0){
       return res.status(400).json({ message: "Blog already exists" });
     }
@@ -64,7 +64,7 @@ routes.post("/",check_token, async (req, res) => {
 
     res.status(200).json(response);
   } catch (e) {
-    console.log(e);
+    //console.log(e);
     res
       .status(500)
       .send({ message: "Internal Server Error (Create Blog)", e: e });
@@ -87,10 +87,10 @@ routes.put("/:id",check_token,async (req, res) => {
       return res.status(404).json({ message: "Blog not found" });
     }
 
-    console.log(updatedBlog);
+    //console.log(updatedBlog);
     res.status(200).json({ response: updatedBlog });
   } catch (e) {
-    console.error(e);
+    //console.error(e);
     res.status(500).json({ message: "Internal Server Error (Update Blog)", error: e.message });
   }
 });

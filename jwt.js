@@ -6,7 +6,7 @@ const JWT_SECRET = "ABC";
 
 
 const generate_token = (payload) =>{
-    console.log(payload) ;
+    //console.log(payload) ;
 
        const token = jwt.sign( payload, JWT_SECRET) ;    
         return token ;
@@ -36,7 +36,7 @@ const check_token = (req,res,next) =>{
     
   next();
 }catch(e){
-    console.log(e);
+    //console.log(e);
     return res.status(500).json({ message: "Unauthorized", status: 500 });
    
 }

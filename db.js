@@ -3,11 +3,11 @@
 const mongoose = require("mongoose") ;
 
 
-const mongodb_url = `mongodb+srv://shubharora:shubharora@cluster0.3mwodev.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+// const mongodb_url = `mongodb+srv://shubharora:shubharora@cluster0.3mwodev.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 const connectdb = async () =>{
     try{
    
-       await mongoose.connect('mongodb+srv://shubharora:shubharora@cluster0.3mwodev.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0') ;
+       await mongoose.connect('mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/') ;
        console.log("CONNECTED TO DB")
     }
     catch(error){

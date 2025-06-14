@@ -7,7 +7,10 @@ const mongoose = require("mongoose") ;
 const connectdb = async () =>{
     try{
    
-       await mongoose.connect('mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/') ;
+       await mongoose.connect('mongodb+srv://shubharoraofficial05:DIQoec3BRzuGzDDo@cluster0.yuskbns.mongodb.net/',{
+        useNewUrlParser: true,
+            useUnifiedTopology: true,
+       }) ;
        console.log("CONNECTED TO DB")
     }
     catch(error){
